@@ -1,0 +1,60 @@
+/* body {
+    display: flex;
+    justify-content: center; =
+    align-items: center; 
+    height: 100vh;
+    background-color: #a471f9;
+    margin: 0; 
+  }
+  */
+ 
+.dashboard-outer-container
+{
+  margin: 10px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+  flex-direction: column;
+
+  height: 600px;
+  width: 1000px;
+  background: lightblue;
+}
+
+.dashboard-outer-container-first-row
+{
+  display: flex;
+  flex-direction: row;
+}
+
+.dashboard-nav-container
+{
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  width: 640px;
+  border: 1px solid white;
+}
+
+
+.dashboard-hobby-container
+{
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+  width: 500px;
+  border: 1px solid white;
+}
+
+.dashboard-settings-container
+{
+  border: 1px solid white;
+  align-self: flex-end;
+  margin-top: auto;
+  margin-left: auto;
+}
