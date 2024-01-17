@@ -24,11 +24,25 @@
     width: 230px;
     background-color: #efeeee;
     border-radius: 15px;
-    justify-content: start;
 }
 
 .addMenu-submit-container
 {
+    color: white;
     background-color: #e74c3c;
 }
 
+.addMenu-submit-container:hover
+{
+    background-color: #Ae1906;   
+}
+
+.addMenu-submit-btn
+{
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+
+}

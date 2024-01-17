@@ -19,9 +19,11 @@ function AddMenu({toggle})
                         <p>icon</p>
                     </div>
 
+                    <button className='addMenu-submit-btn'>
                     <div className='addMenu-submit-container'>
                         <p>submit</p>
                     </div>
+                    </button>
                 </div>
             )}
         </div>

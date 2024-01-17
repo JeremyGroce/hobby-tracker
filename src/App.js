@@ -47,7 +47,7 @@ function App() {
       
 
       <div className='dashboard-hobby-container'>
-      <List numModules={numModules} />
+      <List numModules={3} />
 
       </div>
 
