@@ -14,7 +14,7 @@
 
 }
 
-.addMenu-title-container, .addMenu-submit-container, .addMenu-desc-container, .addMenu-icon-container
+.addMenu-title-container, .addMenu-submit-container, .addMenu-desc-container
 {
     display: flex;
     flex-direction: column;
@@ -23,8 +23,31 @@
     height: 60px;
     width: 230px;
     background-color: #efeeee;
-    border-radius: 15px;
+    border-radius: 5px;
 }
+
+.addMenu-icon-container
+{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+
+    height: 80px;
+    width: 230px;
+    background-color: #efeeee;
+    border-radius: 5px;
+}
+
+.addMenu-icon-container img {
+    max-height: 40%; /* Set a maximum height to fit within the container */
+    max-width: 40%; /* Set a maximum width to maintain aspect ratio */
+    margin: auto;
+}
+
+.addMenu-icon-container img:hover{
+    border: 2px solid gold;
+}
+
 
 .addMenu-submit-container
 {
@@ -45,4 +68,14 @@
   cursor: pointer;
   text-decoration: none;
 
+}
+
+.addMenu-title-text,.addMenu-description-text,.addMenu-Icon-text
+{
+    align-self: flex-start;
+}
+
+.inputBox
+{
+    border: none;
 }

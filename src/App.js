@@ -39,7 +39,7 @@ function App() {
         </div>
 
         {/* New Hobby Module creation screen */}
-        <AddMenu toggle={toggle}/>
+        <AddMenu toggle={toggle} onButtonPress={() => addModules(1)} />
 
 
 
@@ -47,7 +47,7 @@ function App() {
       
 
       <div className='dashboard-hobby-container'>
-      <List numModules={3} />
+      <List numModules={numModules} />
 
       </div>
 

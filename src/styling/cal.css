@@ -19,3 +19,8 @@
   cursor: pointer;
 }
 
+.calendar-btn-outer-container:hover
+{
+  background-color: #Eae6e6;
+}
+
