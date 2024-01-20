@@ -7,9 +7,16 @@ import artIcon from '../img/art.png';
 
 function AddMenu({toggle, onButtonPress})
 {   
+    // Need to use this function to totally populate new modules and then clear the input boxes
     const handleSubmit = () =>
     {
         console.log("test in module");
+
+        // Submit title
+        // Submit Descriptoin
+        // Submit icon 
+
+        // create module
         onButtonPress();
     }
 

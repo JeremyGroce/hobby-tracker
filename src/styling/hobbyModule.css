@@ -23,6 +23,13 @@
     border: 15px;
 }
 
+.hobby-module-inner-left-container
+img {
+    max-height: 100%; /* Set a maximum height to fit within the container */
+    max-width: 100%; /* Set a maximum width to maintain aspect ratio */
+    margin: auto;
+}
+
 .hobby-module-middle-container
 {
     height: 45px;

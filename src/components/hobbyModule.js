@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styling/hobbyModule.css';
+import artIcon from '../img/art.png'
 
 function HobbyModule() {
     const checkBox = () =>
@@ -9,8 +10,17 @@ function HobbyModule() {
 
     return (
         <div className='hobby-module-outer-container'>
-            <div className='hobby-module-inner-left-container'></div>
-            <div className='hobby-module-middle-container'></div>
+            {/* Holds Icon */}
+            <div className='hobby-module-inner-left-container'>
+                <img src={artIcon}/>
+            </div>
+
+            {/* Holds Title and Description */}
+            <div className='hobby-module-middle-container'>
+                lorem 
+            </div>
+
+            {/* Holds Checkbox */}
             <div className='hobby-module-inner-right-container'>
                 <input type='checkbox' className='hobby-module-checkbox'></input>
             </div>
