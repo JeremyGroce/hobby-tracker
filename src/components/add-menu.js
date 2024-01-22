@@ -14,7 +14,7 @@ function AddMenu({toggle, onButtonPress})
     const handleSubmit = () =>
     {
         // create module
-        onButtonPress(1, hobbyTitle, hobbyDesc);
+        onButtonPress(hobbyTitle, hobbyDesc);
 
         // clear input boxes
         setTitle('');

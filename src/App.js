@@ -18,11 +18,12 @@ function App() {
   const [desc, setDesc] = useState('');
 
   // creates the module with the inputted data
-  const addModules = (modTitle, modDesc) => {
+  const addModules = (enteredTitle, enteredDesc) => {
     let count = 1;
-    setTitle(modTitle);
-    console.log(modTitle);
-    setDesc(modDesc);
+    setTitle(enteredTitle);
+    console.log(enteredTitle);
+    console.log(enteredDesc);
+    setDesc(enteredDesc);
     setNumModules(prev => prev+count);
 
   }
@@ -47,7 +48,7 @@ function App() {
         </div>
 
         {/* New Hobby Module creation screen */}
-        <AddMenu toggle={toggle} onButtonPress={() => addModules(title, desc)} />
+        <AddMenu toggle={toggle} onButtonPress={(enteredTitle, enteredDesc) => addModules(enteredTitle, enteredDesc)} />
 
 
 
