@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styling/hobbyModule.css';
-import artIcon from '../img/art.png'
+import artIcon from '../img/books.png'
 
 function HobbyModule({title, desc}) {
     return (
@@ -12,7 +12,15 @@ function HobbyModule({title, desc}) {
 
             {/* Holds Title and Description */}
             <div className='hobby-module-middle-container'>
-                {title}
+                {/* title */}
+                <div className='hobby-module-title'>
+                    {title}
+                </div>
+
+                <div className='hobby-module-description'>
+                    {desc}
+                </div>
+                
             </div>
 
             {/* Holds Checkbox */}

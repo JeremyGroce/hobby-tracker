@@ -18,9 +18,8 @@
     margin-left: 2.5%;
     height: 45px;
     width: 45px;
-    background-color: rgb(239, 238, 238);
     border-radius: 10px;
-    border: 15px;
+    border: 15px, solid, lightgray;
 }
 
 .hobby-module-inner-left-container
@@ -32,12 +31,25 @@ img {
 
 .hobby-module-middle-container
 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     height: 45px;
     width: 260px;
-    background-color: rgb(239, 238, 238);
     border-radius: 10px;
-    border: 15px;
+    border: 15px, solid, rgb(239, 238, 238);
 }
+
+.hobby-module-title
+{
+    font-weight: 500;
+}
+
+.hobby-module-description
+{
+    color: #5f6264;
+}
+
 .hobby-module-inner-right-container
 {
     display: flex;

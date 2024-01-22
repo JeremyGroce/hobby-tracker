@@ -19,11 +19,15 @@ function App() {
 
   // creates the module with the inputted data
   const addModules = (enteredTitle, enteredDesc) => {
+
+    // create 1 module
     let count = 1;
+
+    // set as inputted title and description
     setTitle(enteredTitle);
-    console.log(enteredTitle);
-    console.log(enteredDesc);
     setDesc(enteredDesc);
+
+    // increment number of modules
     setNumModules(prev => prev+count);
 
   }
@@ -56,7 +60,7 @@ function App() {
       
 
       <div className='dashboard-hobby-container'>
-      <List numModules={numModules} hobbyTitle={title}/>
+      <List numModules={numModules} hobbyTitle={title} hobbyDesc={desc}/>
 
       </div>
 
