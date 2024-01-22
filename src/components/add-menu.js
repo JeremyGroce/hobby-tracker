@@ -7,17 +7,18 @@ import artIcon from '../img/art.png';
 
 function AddMenu({toggle, onButtonPress})
 {   
+    const[hobbyTitle, setTitle] = useState('');
+    const[hobbyDesc, setDesc] = useState('');
+
     // Need to use this function to totally populate new modules and then clear the input boxes
     const handleSubmit = () =>
     {
-        console.log("test in module");
-
-        // Submit title
-        // Submit Descriptoin
-        // Submit icon 
-
         // create module
-        onButtonPress();
+        onButtonPress(1, hobbyTitle, hobbyDesc);
+
+        // clear input boxes
+        setTitle('');
+        setDesc('');
     }
 
 
@@ -29,7 +30,12 @@ function AddMenu({toggle, onButtonPress})
                         <div className='addMenu-title-text'>
                             Hobby
                             </div>
-                        <input className='inputBox' type='text' placeholder='Workout, Read, Code...'></input>
+                        <input 
+                            className='inputBox' 
+                            type='text' 
+                            value={hobbyTitle}
+                            placeholder='Workout, Read, Code...'
+                            onChange={(e)=>setTitle(e.target.value)}></input>
 
                     </div>
 
@@ -37,7 +43,12 @@ function AddMenu({toggle, onButtonPress})
                         <div className='addMenu-description-text'>
                         Description
                         </div>
-                        <input className='inputBox' type='text' placeholder='for an hour...10 pages/day...'></input>
+                        <input 
+                                className='inputBox' 
+                                type='text' 
+                                value={hobbyDesc}
+                                placeholder='for an hour...10 pages/day...'
+                                onChange={(e)=>setDesc(e.target.value)}></input>
 
                     </div>
 

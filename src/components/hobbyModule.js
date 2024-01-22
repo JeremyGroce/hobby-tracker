@@ -2,12 +2,7 @@ import React from 'react';
 import '../styling/hobbyModule.css';
 import artIcon from '../img/art.png'
 
-function HobbyModule() {
-    const checkBox = () =>
-    {
-        console.log('hello!');
-    };
-
+function HobbyModule({title, desc}) {
     return (
         <div className='hobby-module-outer-container'>
             {/* Holds Icon */}
@@ -17,7 +12,7 @@ function HobbyModule() {
 
             {/* Holds Title and Description */}
             <div className='hobby-module-middle-container'>
-                lorem 
+                {title}
             </div>
 
             {/* Holds Checkbox */}

@@ -14,14 +14,22 @@ function App() {
   // initialize initial # of hobby modules in <List/>
   const [numModules, setNumModules] = useState(0);
   const [toggle, setToggle] = useState(false);
+  const [title, setTitle] = useState('');
+  const [desc, setDesc] = useState('');
 
-  const addModules = (count) => {
+  // creates the module with the inputted data
+  const addModules = (modTitle, modDesc) => {
+    let count = 1;
+    setTitle(modTitle);
+    console.log(modTitle);
+    setDesc(modDesc);
     setNumModules(prev => prev+count);
+
   }
 
+  // toggle function to handle clicking
   const toggleFunc = () => {
     setToggle(!toggle);
-    console.log("wow");
   }
 
 
@@ -39,7 +47,7 @@ function App() {
         </div>
 
         {/* New Hobby Module creation screen */}
-        <AddMenu toggle={toggle} onButtonPress={() => addModules(1)} />
+        <AddMenu toggle={toggle} onButtonPress={() => addModules(title, desc)} />
 
 
 
@@ -47,7 +55,7 @@ function App() {
       
 
       <div className='dashboard-hobby-container'>
-      <List numModules={numModules} />
+      <List numModules={numModules} hobbyTitle={title}/>
 
       </div>
 
