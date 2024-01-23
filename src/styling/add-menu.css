@@ -78,4 +78,31 @@
 .inputBox
 {
     border: none;
+    border-radius: 5px;
+}
+
+.shake
+{
+    animation: shake 0.5s, flash 0.5s;
+}
+
+@keyframes shake 
+{
+    0%, 100% {
+      transform: translateX(0);
+    }
+    25%, 75% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+}
+
+@keyframes flash
+{
+    0%, 100%
+    {
+        border: 1px solid #e74c3c;
+    }
 }

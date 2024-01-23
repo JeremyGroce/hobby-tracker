@@ -13,12 +13,32 @@ function AddMenu({toggle, onButtonPress})
     // Need to use this function to totally populate new modules and then clear the input boxes
     const handleSubmit = () =>
     {
-        // create module
-        onButtonPress(hobbyTitle, hobbyDesc);
+        var input1 = document.getElementById('title-inputBox');
+        var input2 = document.getElementById('desc-inputBox');
 
-        // clear input boxes
-        setTitle('');
-        setDesc('');
+        // if inputbox is empty, shake, otherwise submit new module
+        if(input1.value === '' || input2.value === '')
+        {
+            // make input box shake
+            input1.classList.add('shake', 'flash');
+            input2.classList.add('shake', 'flash');
+
+            // remove shake after the animation finishes
+            setTimeout(function()
+            {
+                input1.classList.remove('shake', 'flash');
+                input2.classList.remove('shake', 'flash');
+            }, 500);
+        }
+        else //Create module if title and desc are occupied with valid inputs
+        {
+            // create module
+            onButtonPress(hobbyTitle, hobbyDesc);
+
+            // clear input boxes
+            setTitle('');
+            setDesc('');
+        }
     }
 
 
@@ -31,6 +51,7 @@ function AddMenu({toggle, onButtonPress})
                             Hobby
                             </div>
                         <input 
+                            id='title-inputBox'
                             className='inputBox' 
                             type='text' 
                             value={hobbyTitle}
@@ -44,6 +65,7 @@ function AddMenu({toggle, onButtonPress})
                         Description
                         </div>
                         <input 
+                                id='desc-inputBox'
                                 className='inputBox' 
                                 type='text' 
                                 value={hobbyDesc}
