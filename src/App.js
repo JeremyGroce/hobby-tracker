@@ -5,6 +5,8 @@ import Add from './components/add.js';
 import Set from './components/settings.js';
 import List from './components/hobbyList.js'
 import Theme1 from './themes/theme1.js';
+import compIcon from './img/computer.png';
+
 import './styling/app.css'
 
 // temp
@@ -62,7 +64,8 @@ function App() {
       
 
       <div className='dashboard-hobby-container'>
-      <List numModules={numModules} hobbyTitle={title} hobbyDesc={desc} hobbyIcon={icon}/>
+
+      <List numModules={numModules} hobbyTitle={title} hobbyDesc={desc} hobbyIcon={icon}/> 
 
       </div>
 
