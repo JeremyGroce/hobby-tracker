@@ -19,6 +19,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 7px;
 
     height: 60px;
     width: 230px;
@@ -73,6 +74,8 @@
 .addMenu-title-text,.addMenu-description-text,.addMenu-Icon-text
 {
     align-self: flex-start;
+    margin-left: 2.5%;
+    font-size: 15px;
 }
 
 .inputBox
@@ -104,5 +107,17 @@
     0%, 100%
     {
         border: 1px solid #e74c3c;
+    }
+}
+
+.clickedIcon:active
+{
+    animation: pa 5s;
+}
+
+@keyframes pa {
+    0%, 100%
+    {
+        background-color: black;
     }
 }

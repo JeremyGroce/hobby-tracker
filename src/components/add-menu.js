@@ -86,12 +86,12 @@ function AddMenu({toggle, onButtonPress})
 
                     <div className='addMenu-icon-container'>
                         <div className='addMenu-Icon-text'>
-                        icon
+                        Icon
                         </div>
-                        <img src={bookIcon} onClick={()=>handleImg(bookIcon)}/>
-                        <img src={weightsIcon} onClick={()=>handleImg(weightsIcon)}/>
-                        <img src={compIcon} onClick={()=>handleImg(compIcon)}/>
-                        <img src={artIcon} onClick={()=>handleImg(artIcon)}/>
+                        <img src={bookIcon} className='clickedIcon' onClick={()=>handleImg(bookIcon)}/>
+                        <img src={weightsIcon}  className='clickedIcon' onClick={()=>handleImg(weightsIcon)}/>
+                        <img src={compIcon}  className='clickedIcon' onClick={()=>handleImg(compIcon)}/>
+                        <img src={artIcon}  className='clickedIcon' onClick={()=>handleImg(artIcon)}/>
 
 
                     </div>
