@@ -2,12 +2,12 @@ import React from 'react';
 import '../styling/hobbyModule.css';
 import artIcon from '../img/books.png'
 
-function HobbyModule({title, desc}) {
+function HobbyModule({title, desc, icon}) {
     return (
         <div className='hobby-module-outer-container'>
             {/* Holds Icon */}
             <div className='hobby-module-inner-left-container'>
-                <img src={artIcon}/>
+                {icon}
             </div>
 
             {/* Holds Title and Description */}

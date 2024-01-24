@@ -7,10 +7,20 @@ import artIcon from '../img/art.png';
 
 function AddMenu({toggle, onButtonPress})
 {   
+    // useStates or user title and desc input and user clicked icon
     const[hobbyTitle, setTitle] = useState('');
-    const[hobbyDesc, setDesc] = useState('');
+    const[hobbyDesc, setDesc]   = useState('');
+    const[hobbyIcon, setIcon]   = useState(null);
 
-    // Need to use this function to totally populate new modules and then clear the input boxes
+    // handler function or clicked image
+    const handleImg = (picture) =>
+    {
+        console.log("handleImg");
+        setIcon(picture);
+    }
+
+
+    // populate new modules and then clear the input boxes
     const handleSubmit = () =>
     {
         var input1 = document.getElementById('title-inputBox');
@@ -33,7 +43,7 @@ function AddMenu({toggle, onButtonPress})
         else //Create module if title and desc are occupied with valid inputs
         {
             // create module
-            onButtonPress(hobbyTitle, hobbyDesc);
+            onButtonPress(hobbyTitle, hobbyDesc, hobbyIcon);
 
             // clear input boxes
             setTitle('');
@@ -78,10 +88,10 @@ function AddMenu({toggle, onButtonPress})
                         <div className='addMenu-Icon-text'>
                         icon
                         </div>
-                        <img src={bookIcon}/>
-                        <img src={weightsIcon}/>
-                        <img src={compIcon}/>
-                        <img src={artIcon}/>
+                        <img src={bookIcon} onClick={()=>handleImg(bookIcon)}/>
+                        <img src={weightsIcon} onClick={()=>handleImg(weightsIcon)}/>
+                        <img src={compIcon} onClick={()=>handleImg(compIcon)}/>
+                        <img src={artIcon} onClick={()=>handleImg(artIcon)}/>
 
 
                     </div>
