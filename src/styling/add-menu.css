@@ -102,22 +102,21 @@
     }
 }
 
-@keyframes flash
+@keyframes flash 
 {
     0%, 100%
     {
         border: 1px solid #e74c3c;
-    }
+    }    
 }
 
+/* while being clicked, temporarily fills the square being moused over entirely with gold */
 .clickedIcon:active
 {
-    animation: pa 5s;
+    background-color: gold;
 }
 
-@keyframes pa {
-    0%, 100%
-    {
-        background-color: black;
-    }
+.gold-border
+{
+    border: 2px solid gold;
 }

@@ -12,10 +12,10 @@ function AddMenu({toggle, onButtonPress})
     const[hobbyDesc, setDesc]   = useState('');
     const[hobbyIcon, setIcon]   = useState(null);
 
+
     // handler function or clicked image
     const handleImg = (picture) =>
     {
-        console.log("handleImg");
         setIcon(picture);
     }
 
@@ -25,19 +25,34 @@ function AddMenu({toggle, onButtonPress})
     {
         var input1 = document.getElementById('title-inputBox');
         var input2 = document.getElementById('desc-inputBox');
+        var input3 = document.getElementById('iconPic');
 
         // if inputbox is empty, shake, otherwise submit new module
-        if(input1.value === '' || input2.value === '')
+        if(input1.value === '' || input2.value === '' || hobbyIcon === null)
         {
-            // make input box shake
-            input1.classList.add('shake', 'flash');
-            input2.classList.add('shake', 'flash');
+            if(input1.value === '')
+            {
+                input1.classList.add('shake', 'flash');
+            }
+
+            if(input2.value === '')
+            {
+                input2.classList.add('shake', 'flash');
+
+            }
+
+            if(hobbyIcon === null)
+            {
+                input3.classList.add('shake', 'flash');
+
+            }
 
             // remove shake after the animation finishes
             setTimeout(function()
             {
                 input1.classList.remove('shake', 'flash');
                 input2.classList.remove('shake', 'flash');
+                input3.classList.remove('shake', 'flash');
             }, 500);
         }
         else //Create module if title and desc are occupied with valid inputs
@@ -84,14 +99,14 @@ function AddMenu({toggle, onButtonPress})
 
                     </div>
 
-                    <div className='addMenu-icon-container'>
+                    <div id='iconPic' className='addMenu-icon-container'>
                         <div className='addMenu-Icon-text'>
                         Icon
                         </div>
-                        <img src={bookIcon} className='clickedIcon' onClick={()=>handleImg(bookIcon)}/>
-                        <img src={weightsIcon}  className='clickedIcon' onClick={()=>handleImg(weightsIcon)}/>
-                        <img src={compIcon}  className='clickedIcon' onClick={()=>handleImg(compIcon)}/>
-                        <img src={artIcon}  className='clickedIcon' onClick={()=>handleImg(artIcon)}/>
+                        <img src={bookIcon} className={`clickedIcon ${hobbyIcon === bookIcon ? 'gold-border' : ''}`} onClick={() => handleImg(bookIcon)} />
+                        <img src={weightsIcon} className={`clickedIcon ${hobbyIcon === weightsIcon ? 'gold-border' : ''}`} onClick={()=>handleImg(weightsIcon)}/>
+                        <img src={compIcon} className={`clickedIcon ${hobbyIcon === compIcon ? 'gold-border' : ''}`} onClick={()=>handleImg(compIcon)}/>
+                        <img src={artIcon} className={`clickedIcon ${hobbyIcon === artIcon ? 'gold-border' : ''}`} onClick={()=>handleImg(artIcon)}/>
 
 
                     </div>
