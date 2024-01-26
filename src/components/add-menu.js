@@ -63,6 +63,7 @@ function AddMenu({toggle, onButtonPress})
             // clear input boxes
             setTitle('');
             setDesc('');
+            setIcon(null);
         }
     }
 

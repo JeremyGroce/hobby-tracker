@@ -2,6 +2,7 @@ import React from 'react';
 import '../styling/hobbyModule.css';
 import artIcon from '../img/books.png'
 
+// physically structure the modules themselves
 function HobbyModule({title, desc, icon}) {
     return (
         <div className='hobby-module-outer-container'>
