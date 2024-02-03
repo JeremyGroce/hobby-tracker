@@ -5,7 +5,7 @@ import weightsIcon from '../img/workout.png';
 import compIcon from '../img/computer.png';
 import artIcon from '../img/art.png';
 
-function AddMenu({toggle, onButtonPress})
+function AddMenu({toggle, reGET})
 {   
     // useStates or user title and desc input and user clicked icon
     const[hobbyTitle, setTitle] = useState('');
@@ -55,19 +55,25 @@ function AddMenu({toggle, onButtonPress})
                 input3.classList.remove('shake', 'flash');
             }, 500);
         }
-        else //Create module if title and desc are occupied with valid inputs
+        //Create module if title and desc are occupied with valid inputs
+        else 
         {
-            // create module
-            onButtonPress(hobbyTitle, hobbyDesc, hobbyIcon);
+            // POST request 
+            // ------------
 
-            // clear input boxes
+            // send trigger to reGET <List/>
+            reGET();
+
+            // clear input boxes and icon selection
             setTitle('');
             setDesc('');
             setIcon(null);
+
         }
     }
 
 
+    // display componenent on button click, conditionally return title and desc
     return(
         <div>
             {toggle && (

@@ -1,34 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Module from '../components/hobbyModule.js';
-import Add from '../components/add.js';
 import '../styling/hobbyList.css';
 
-// contain and display modules
-function HobbyList({numModules, hobbyTitle, hobbyDesc, hobbyIcon}) {
+// fetch and display modules on render
+function HobbyList({reGET, resetTrigger}) {
+  // const backendURL = 'http://localhost:3001';
 
+  // NOTE: Need to do GET based on date
 
-  // create an individual array that is self-contained as a module with unique ids
+  // Initial GET on render
+  useEffect(()=>{
+  // fetch(`${backendURL}/api/hobbies`)
+  //   .then(response => response.json())
+  //   .then(data => {})
+  //   .catch(error => {
+  //     console.error('Error fetching data:', error);
+  //   });
+  }, []);
 
-  // problem !!! -> this is being activated when I click the add button and being called twice when I click submit
-  const modules = Array.from({length:4}, (_,index)=>(
-  {
-      id: index,
-      title: hobbyTitle,
-      desc: hobbyDesc,
-      icon: hobbyIcon,
-  }));
-  console.log(`Created Module with id: ${module.id}`);
+  // conditionally call another GET request on event trigger
+  useEffect(() => {
+    // if reGET === true, do another GET request
+    if (reGET) {
+      // GET request
+      // -----------
 
+      // reset trigger to false
+      resetTrigger();
+    }
+  }, [reGET, resetTrigger]); 
+ 
   
-  // return the array of populated modules
+  console.log(reGET);
+
   return (
-      // <div className='list-outer-container' draggable='true'>
-      //   {[...Array(numModules)].map((_, index) => (
-      //     // <Module key={index} /> 
-      //     <Module title={hobbyTitle} desc={hobbyDesc} icon={<img src={hobbyIcon}/>}/>      
-      //   ))}
-      // </div>
-      1
+    <div className='list-outer-container' draggable='true'>
+      <Module/>
+    </div>
   );
 }
 

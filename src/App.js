@@ -3,9 +3,7 @@ import DayNav from './components/dayNav.js';
 import Cal from './components/cal.js';
 import Add from './components/add.js';
 import Set from './components/settings.js';
-import List from './components/hobbyList.js'
-import Theme1 from './themes/theme1.js';
-import compIcon from './img/computer.png';
+import List from './components/hobbyList.js'    //displays added modules
 
 import './styling/app.css'
 
@@ -13,32 +11,17 @@ import './styling/app.css'
 import AddMenu from './components/add-menu.js';
 
 function App() {
-  // initialize initial # of hobby modules in <List/>
-  const [numModules, setNumModules] = useState(0);
-  const [toggle, setToggle] = useState(false);
-  const [title, setTitle] = useState('');
-  const [desc, setDesc] = useState('');
-  const [icon, setIcon] = useState(null);
+  const [toggle, setToggle] = useState(false);   //toggle submission menu
+  const [trigger, setTrigger] = useState(false); //trigger rerender of list on event
 
-  // creates the module with the inputted data
-  const addModules = (enteredTitle, enteredDesc, enteredIcon) => {
-
-    // create 1 module
-    let count = 1;
-
-    // set as inputted title, description, and icon
-    setTitle(enteredTitle);
-    setDesc(enteredDesc);
-    setIcon(enteredIcon);
-
-    // increment number of modules
-    setNumModules(prev => prev+count);
-
-  }
-
-  // toggle function to handle clicking
+  // toggle function to handle clicking add button
   const toggleFunc = () => {
     setToggle(!toggle);
+  }
+
+  // trigger function to handle submission or calendar change
+  const triggerGET = () => {
+    setTrigger(!trigger);
   }
 
 
@@ -50,28 +33,21 @@ function App() {
         {/* Navigation task bar */}
         <div className='dashboard-nav-container'>
           <Cal/>
-          <DayNav/>
-          {/* <Add onAddClick={() => addModules(1)} /> */}
+          <DayNav reGET={triggerGET}/>
           <Add onAddClick={()=>toggleFunc()}/>
         </div>
 
         {/* New Hobby Module creation screen */}
-        <AddMenu toggle={toggle} onButtonPress={(enteredTitle, enteredDesc, enteredIcon) => addModules(enteredTitle, enteredDesc, enteredIcon)} />
-
-
-
+        <AddMenu toggle={toggle} reGET={triggerGET}/>
       </div>
       
-
+      {/* Display hobby Modules */}
       <div className='dashboard-hobby-container'>
-
-      <List numModules={numModules} hobbyTitle={title} hobbyDesc={desc} hobbyIcon={icon}/> 
-
+        <List reGET={trigger} resetTrigger={triggerGET}/> 
       </div>
 
       <div className='dashboard-settings-container'>
-      <Set/>
-
+        <Set/>
       </div>
 
     </div>
