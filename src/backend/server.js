@@ -6,7 +6,7 @@ const port = 3001;  //local host
 app.use(cors());
 
 // Sample data
-let data = ["sample data"];
+let data = ["Code", "for at least 1 hour"];
 
 // GET request
 app.get('/',(req,res) => {
