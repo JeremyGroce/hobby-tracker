@@ -6,7 +6,12 @@ const port = 3001;  //local host
 app.use(cors());
 
 // Sample data
-let data = ["Code", "for at least 1 hour"];
+let data = [
+    {title: 'Code', desc: 'for an hour', image: '../img/computer.png'},
+    {title: 'Read', desc: 'at least 30 mins', image: '../img/books.png'},
+    {title: 'Lift', desc: 'do my regular routine', image: '/src/img/workout.png'}
+
+];
 
 // GET request
 app.get('/',(req,res) => {

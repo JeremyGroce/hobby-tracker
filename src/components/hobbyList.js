@@ -9,16 +9,16 @@ function HobbyList({reGET, resetTrigger}) {
 
   const backendURL = 'http://localhost:3001';
 
-  const [title, setTitle] = useState('');
-  const [desc, setDesc]   = useState('');
+  const [modules, setModules] = useState([]);
 
   // Initial GET on render
   useEffect(()=>{
   fetch(`${backendURL}/`)
     .then(response => response.json())
     .then(data => {
-      setTitle(data[0]);
-      setDesc(data[1]);
+      // store parsed data from fetch
+      setModules(data);
+
         
     })
     .catch(error => {
@@ -43,7 +43,12 @@ function HobbyList({reGET, resetTrigger}) {
 
   return (
     <div className='list-outer-container' draggable='true'>
-      <Module title={title} desc={desc}/>
+
+      {/* Maps the backend data entries to individual displayable modules */}
+      {modules.map((module, index) => (
+        <Module key={index} title={module.title} desc={module.desc} icon={module.image}/>
+      ))}
+
     </div>
   );
 }

@@ -1,14 +1,14 @@
 import React from 'react';
 import '../styling/hobbyModule.css';
-import artIcon from '../img/books.png'
+import bookIcon from '../img/books.png'
 
 // physically structure the modules themselves
-function HobbyModule({title, desc}) {
+function HobbyModule({title, desc, icon}) {
     return (
         <div className='hobby-module-outer-container'>
             {/* Holds Icon */}
             <div className='hobby-module-inner-left-container'>
-                {/* {icon} */}
+                {icon}
             </div>
 
             {/* Holds Title and Description */}
