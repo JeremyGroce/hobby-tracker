@@ -1,14 +1,16 @@
 import React from 'react';
 import '../styling/hobbyModule.css';
 import bookIcon from '../img/books.png'
+import error from '../img/404.png'
 
 // physically structure the modules themselves
 function HobbyModule({title, desc, icon}) {
+    console.log(icon);
     return (
         <div className='hobby-module-outer-container'>
             {/* Holds Icon */}
             <div className='hobby-module-inner-left-container'>
-                {icon}
+                <img src={icon}/>
             </div>
 
             {/* Holds Title and Description */}
