@@ -5,12 +5,16 @@ import error from '../img/404.png'
 
 // physically structure the modules themselves
 function HobbyModule({title, desc, icon}) {
-    console.log(icon);
+    const backendURL = 'http://localhost:3001/';
+
+    const newIcon = backendURL + icon;
+    console.log(newIcon);
+
     return (
         <div className='hobby-module-outer-container'>
             {/* Holds Icon */}
             <div className='hobby-module-inner-left-container'>
-                <img src={icon}/>
+                <img src={newIcon}/>
             </div>
 
             {/* Holds Title and Description */}
