@@ -7,6 +7,8 @@ const port = 3001;  //local host
 
 app.use(cors());
 
+app.use(express.json());
+
 // get static files
 app.use(express.static(path.join(__dirname, 'src')));
 
@@ -24,6 +26,15 @@ let data = [
 // GET request
 app.get('/',(req,res) => {
     res.json(data);
+})
+
+// POST request
+app.post('/create',(req,res) => {
+    const newData = req.body;
+
+    data.push(newData);
+    res.status(201).json({message: 'Data created'});
+
 })
 
 app.listen(port, () => {

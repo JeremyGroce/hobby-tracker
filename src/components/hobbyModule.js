@@ -8,7 +8,6 @@ function HobbyModule({title, desc, icon}) {
     const backendURL = 'http://localhost:3001/';
 
     const newIcon = backendURL + icon;
-    console.log(newIcon);
 
     return (
         <div className='hobby-module-outer-container'>

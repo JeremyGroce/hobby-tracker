@@ -59,7 +59,31 @@ function AddMenu({toggle, reGET})
         else 
         {
             // POST request 
-            // -----------
+            const newHobby = {
+                title: hobbyTitle,
+                desc: hobbyDesc,
+                image: hobbyIcon    // <--- Localhost3001 uses normal filepath. I am using static here. not working
+            };
+
+            // POST request options
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newHobby)
+            };
+
+            // Send POST req
+            fetch('http://localhost:3001/create', options)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('New hobby entry created:', data);
+                })
+                .catch(error => {
+                    console.error('Error creating hobby entry:', error);
+                });
+            
 
             // send trigger to reGET <List/>
             reGET();
