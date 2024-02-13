@@ -31,7 +31,17 @@ function HobbyList({reGET, resetTrigger}) {
     // if reGET === true, do another GET request
     if (reGET) {
       // GET request
-      // -----------
+      fetch(`${backendURL}/`)
+      .then(response => response.json())
+      .then(data => {
+        // store parsed data from fetch
+        setModules(data);
+
+          
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
 
       // reset trigger to false
       resetTrigger();

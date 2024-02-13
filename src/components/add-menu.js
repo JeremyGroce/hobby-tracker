@@ -5,6 +5,9 @@ import weightsIcon from '../img/workout.png';
 import compIcon from '../img/computer.png';
 import artIcon from '../img/art.png';
 
+// !!Note!!
+// either switch to static images for backend OR find a way to convert static images to literal directory path
+
 function AddMenu({toggle, reGET})
 {   
     // useStates or user title and desc input and user clicked icon
@@ -16,6 +19,22 @@ function AddMenu({toggle, reGET})
     // handler function or clicked image
     const handleImg = (picture) =>
     {
+        if(picture === bookIcon)
+        {
+            picture = 'img/books.png'
+        }
+        else if(picture === weightsIcon)
+        {
+            picture = 'img/workout.png'
+        }
+        else if(picture === artIcon)
+        {
+            picture = 'img/art.png'
+        }
+        else if(picture === compIcon)
+        {
+            picture = 'img/computer.png'
+        }
         setIcon(picture);
     }
 
@@ -62,7 +81,7 @@ function AddMenu({toggle, reGET})
             const newHobby = {
                 title: hobbyTitle,
                 desc: hobbyDesc,
-                image: hobbyIcon    // <--- Localhost3001 uses normal filepath. I am using static here. not working
+                image: hobbyIcon    
             };
 
             // POST request options
@@ -134,10 +153,10 @@ function AddMenu({toggle, reGET})
                         <div className='addMenu-Icon-text'>
                         Icon
                         </div>
-                        <img src={bookIcon} className={`clickedIcon ${hobbyIcon === bookIcon ? 'gold-border' : ''}`} onClick={() => handleImg(bookIcon)} />
-                        <img src={weightsIcon} className={`clickedIcon ${hobbyIcon === weightsIcon ? 'gold-border' : ''}`} onClick={()=>handleImg(weightsIcon)}/>
-                        <img src={compIcon} className={`clickedIcon ${hobbyIcon === compIcon ? 'gold-border' : ''}`} onClick={()=>handleImg(compIcon)}/>
-                        <img src={artIcon} className={`clickedIcon ${hobbyIcon === artIcon ? 'gold-border' : ''}`} onClick={()=>handleImg(artIcon)}/>
+                        <img src={bookIcon} className={`clickedIcon ${hobbyIcon === 'img/books.png' ? 'gold-border' : ''}`} onClick={() => handleImg(bookIcon)} />
+                        <img src={weightsIcon} className={`clickedIcon ${hobbyIcon === 'img/workout.png' ? 'gold-border' : ''}`} onClick={()=>handleImg(weightsIcon)}/>
+                        <img src={compIcon} className={`clickedIcon ${hobbyIcon === 'img/computer.png' ? 'gold-border' : ''}`} onClick={()=>handleImg(compIcon)}/>
+                        <img src={artIcon} className={`clickedIcon ${hobbyIcon === 'img/art.png' ? 'gold-border' : ''}`} onClick={()=>handleImg(artIcon)}/>
 
 
                     </div>
