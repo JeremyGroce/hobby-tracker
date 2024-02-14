@@ -3,15 +3,23 @@ import Module from '../components/hobbyModule.js';
 import '../styling/hobbyList.css';
 
 // fetch and display modules on render
-function HobbyList({reGET, resetTrigger}) {
+function HobbyList({reGET, resetTrigger, currentDate}) {
 
-    // NOTE: Need to do GET based on date
 
+  // backend URL
   const backendURL = 'http://localhost:3001';
 
+  // get today's real date; set modules for recieving data from backend
+  const [realDate, setrealDate] = useState('');
   const [modules, setModules] = useState([]);
 
-  // Initial GET on render
+  // get actual date for today
+  const today = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
+  const formattedDate = today.toLocaleDateString(undefined, options);
+  setrealDate(formattedDate);
+
+  // Initial GET on render for today's date
   useEffect(()=>{
   fetch(`${backendURL}/`)
     .then(response => response.json())
@@ -26,7 +34,20 @@ function HobbyList({reGET, resetTrigger}) {
     });
   }, []);
 
-  // conditionally call another GET request on event trigger
+  // conditional GET for past dates
+
+  // if(current date <  actual date)
+  /* {
+      pull from checkedData array only
+    }
+    else
+    {
+      pull checkedData for that day + current list 
+    }
+
+  */
+  
+
   useEffect(() => {
     // if reGET === true, do another GET request
     if (reGET) {

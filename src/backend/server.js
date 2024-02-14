@@ -26,7 +26,7 @@ let data = [
 // instances where the hobby was checked (done by the user) 
 let checkedData = [
     {
-        date: 'MM-DD-YYYY', 
+        date: 'Monday, February 12, 2024', 
         title: 'Code',
         desc: 'for an hour',
         image: '/img/computer.png',
