@@ -3,7 +3,7 @@ import lArrow from '../img/leftArrow.png';
 import rArrow from '../img/rightArrow.png';
 import '../styling/dayNav.css';
 
-function DayNav({reGET}) {
+function DayNav({reGET, sendDate}) {
 
   const [currDate, setCurrDate] = useState('');
 
@@ -17,6 +17,9 @@ function DayNav({reGET}) {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
     const formattedDate = currentDate.toLocaleDateString(undefined, options);
     setCurrDate(formattedDate);
+
+    // send current date
+    sendDate(formattedDate);   
   }
   
   // decrement date
@@ -26,6 +29,10 @@ function DayNav({reGET}) {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
     const formattedDate = currentDate.toLocaleDateString(undefined, options);
     setCurrDate(formattedDate);
+    
+    // send current date
+    sendDate(formattedDate);
+
     // reGET();  // GET request NOTE: needs to somehow tell GET to pull based on date
   }
 
@@ -36,6 +43,9 @@ function DayNav({reGET}) {
     const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'};
     const formattedDate = currentDate.toLocaleDateString(undefined, options);
     setCurrDate(formattedDate);
+
+    // send current date
+    sendDate(formattedDate);
   }
 
   return (

@@ -19,6 +19,7 @@ function AddMenu({toggle, reGET})
     // handler function or clicked image
     const handleImg = (picture) =>
     {
+        // Hopefully get rid of this if-else statement
         if(picture === bookIcon)
         {
             picture = 'img/books.png'

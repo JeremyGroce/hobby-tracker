@@ -15,12 +15,23 @@ app.use(express.static(path.join(__dirname, 'src')));
 // Serve static files from the 'src/img' directory under the '/images' URL prefix
 app.use('/img', express.static(path.join(__dirname, '..', 'img')));
 
-// Sample data
+// Core data saved and shown everyday
 let data = [
     {title: 'Code', desc: 'for an hour', image: 'img/computer.png'},
     {title: 'Read', desc: 'at least 30 mins', image: 'img/books.png'},
     {title: 'Lift', desc: 'do my regular routine', image: 'img/workout.png'}
 
+];
+
+// instances where the hobby was checked (done by the user) 
+let checkedData = [
+    {
+        date: 'MM-DD-YYYY', 
+        title: 'Code',
+        desc: 'for an hour',
+        image: '/img/computer.png',
+        check: true
+    }
 ];
 
 // GET request
