@@ -50,7 +50,7 @@ function App() {
       
       {/* Display hobby Modules */}
       <div className='dashboard-hobby-container'>
-        <List reGET={trigger} resetTrigger={triggerGET} currentDate={setDate}/> 
+        <List reGET={trigger} resetTrigger={triggerGET} workingDate={setDate}/> 
       </div>
 
       <div className='dashboard-settings-container'>
